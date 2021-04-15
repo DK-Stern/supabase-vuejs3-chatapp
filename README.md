@@ -1,5 +1,7 @@
 # supabase-chat
 
+A simple vuejs 3 application which works with [supabase](https://supabase.io/).
+
 ## Project setup
 ```
 yarn install
