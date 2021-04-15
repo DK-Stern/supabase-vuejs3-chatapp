@@ -38,8 +38,7 @@ export default {
   },
   methods: {
     sendMessage() {
-      const username = this.$store.state.username;
-      this.$store.dispatch("newMessage", this.message, username);
+      this.$store.dispatch("newMessage", this.message);
       this.message = "";
     },
   },
