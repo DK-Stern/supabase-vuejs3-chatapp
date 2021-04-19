@@ -4,7 +4,7 @@
       v-for="(message, index) of this.$store.state.messages"
       :key="index"
       :message="message.message"
-      :fromMe="isOwnMessage(message)"
+      :author="message.user"
     />
   </div>
 </template>
@@ -15,11 +15,6 @@ import Message from "./Message";
 export default {
   name: "Messages",
   components: { Message },
-  methods: {
-    isOwnMessage(message) {
-      return message.user === this.$store.state.username;
-    },
-  },
 };
 </script>
 

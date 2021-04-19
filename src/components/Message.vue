@@ -6,20 +6,32 @@
         [fromMe ? 'from-me' : '']
       "
     >
-      {{ message }}
+      <p>{{ message }}</p>
+      <p :class="'italic ' + [fromMe ? 'from-me-author' : 'author']">
+        @{{ fromMe ? "me" : author }}
+      </p>
     </div>
   </div>
 </template>
 
 <script>
+import { computed } from "vue";
+import { useStore } from "vuex";
+
 export default {
   name: "Message",
   props: {
     message: String,
-    fromMe: {
-      type: Boolean,
-      default: false,
-    },
+    author: String,
+  },
+  setup(props) {
+    const store = useStore();
+
+    const fromMe = computed(() => props.author === store.state.username);
+
+    return {
+      fromMe,
+    };
   },
 };
 </script>
@@ -27,5 +39,11 @@ export default {
 <style lang="postcss" scoped>
 .from-me {
   @apply bg-blue-300 float-right;
+}
+.from-me-author {
+  @apply text-right text-blue-600;
+}
+.author {
+  @apply text-gray-500;
 }
 </style>

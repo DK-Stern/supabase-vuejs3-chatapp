@@ -17,7 +17,6 @@ export default createStore({
     },
     newMessage(state, newMessage) {
       if (!state.messages.find((message) => message.id === newMessage.id)) {
-        console.log("push", newMessage);
         state.messages.push(newMessage);
       }
     },
