@@ -1,6 +1,6 @@
 # supabase-chat
 
-A simple vuejs 3 application which works with [supabase](https://supabase.io/).
+A simple realtime chat demo application. Based on [vuejs 3](https://vuejs.org/) and [supabase](https://supabase.io/).
 
 ## Project setup
 ```
